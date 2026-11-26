@@ -4,186 +4,92 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description"
-    content="KL University Student Activity Management Portal - Explore upcoming campus events, technical clubs, and register online.">
-  <meta name="author" content="Mohammad Yahya">
-  <title>Student Activity Management Portal | University Events</title>
+  <meta name="description" content="KL University Student Activity Management Portal">
+  <title>University Student Activity Management Portal</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <!-- Skip Link for Keyboard Accessibility -->
-  <a href="#main-content" class="skip-link">Skip to main content</a>
-
   <header>
-    <div class="container">
-      <h1>University Student Activity Management Portal</h1>
-      <p>Discover campus events, technical clubs, and cultural festivals</p>
-    </div>
+    <h1>University Student Activity Management Portal</h1>
+    <p>View upcoming events, explore clubs, and register online.</p>
   </header>
 
-  <nav aria-label="Primary Navigation">
-    <div class="container">
-      <ul>
-        <li><a href="#upcoming-events">Upcoming Events</a></li>
-        <li><a href="#activities">Student Clubs</a></li>
-        <li><a href="#registration">Event Registration</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </div>
+  <nav aria-label="Main Navigation">
+    <ul>
+      <li><a href="#events">Events</a></li>
+      <li><a href="#clubs">Clubs</a></li>
+      <li><a href="#register">Register</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
   </nav>
 
-  <main id="main-content" class="container layout-grid">
-    <div class="primary-column">
-      <!-- Upcoming Events Section -->
-      <section id="upcoming-events" aria-labelledby="events-heading">
-        <h2 id="events-heading">Upcoming Campus Events</h2>
+  <main>
+    <section id="events">
+      <h2>Upcoming Events</h2>
+      <article class="card">
+        <h3>National Coding Hackathon 2026</h3>
+        <p><strong>Date:</strong> Dec 10, 2026 | <strong>Venue:</strong> CSE Seminar Hall</p>
+        <p>A 24-hour coding challenge open to all engineering students.</p>
+      </article>
+      <article class="card">
+        <h3>Embedded Systems &amp; IoT Expo</h3>
+        <p><strong>Date:</strong> Dec 15, 2026 | <strong>Venue:</strong> Innovation Lab</p>
+        <p>Showcase microcontroller and hardware circuit projects.</p>
+      </article>
+    </section>
 
-        <article class="event-card">
-          <h3>National Hackathon &amp; Coding Sprint 2026</h3>
-          <p class="meta"><strong>Date:</strong> December 10, 2026 | <strong>Venue:</strong> CSE Seminar Hall</p>
-          <p>A 24-hour competitive programming and software prototyping challenge open to all undergraduate engineering
-            students.</p>
-        </article>
+    <section id="clubs">
+      <h2>Student Clubs</h2>
+      <article class="card">
+        <h3>Competitive Coding Club</h3>
+        <p>Weekly problem-solving practice and coding contests every Saturday.</p>
+      </article>
+    </section>
 
-        <article class="event-card">
-          <h3>Embedded Systems &amp; IoT Hardware Expo</h3>
-          <p class="meta"><strong>Date:</strong> December 15, 2026 | <strong>Venue:</strong> Innovation Lab, Block B</p>
-          <p>Showcase your ESP32, Arduino, and digital logic projects to faculty mentors and industry guests.</p>
-        </article>
+    <section id="register">
+      <h2>Event Registration</h2>
+      <form action="#" method="post">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" required>
 
-        <article class="event-card">
-          <h3>Inter-Department Football Championship</h3>
-          <p class="meta"><strong>Date:</strong> December 20, 2026 | <strong>Venue:</strong> University Main Ground</p>
-          <p>Annual knockout football tournament. Register your department squad before the deadline.</p>
-        </article>
-      </section>
+        <label for="email">University Email:</label>
+        <input type="email" id="email" name="email" required>
 
-      <!-- Student Activities Section -->
-      <section id="activities" aria-labelledby="activities-heading">
-        <h2 id="activities-heading">Active Student Clubs</h2>
-        <article class="event-card">
-          <h3>Competitive Coding &amp; AI Society</h3>
-          <p>Weekly algorithmic problem-solving sessions, mock contests, and machine learning workshops.</p>
-        </article>
-        <article class="event-card">
-          <h3>Robotics &amp; Hardware Design Club</h3>
-          <p>Hands-on circuit simulation, microcontroller programming, and autonomous bot building.</p>
-        </article>
-      </section>
+        <label for="event">Select Event:</label>
+        <select id="event" name="event" required>
+          <option value="">-- Choose an Event --</option>
+          <option value="hackathon">National Coding Hackathon 2026</option>
+          <option value="iot">Embedded Systems &amp; IoT Expo</option>
+        </select>
 
-      <!-- Accessible Student Registration Form -->
-      <section id="registration" aria-labelledby="form-heading">
-        <h2 id="form-heading">Student Event Registration Form</h2>
-        <p id="form-instructions">All fields marked with an asterisk (*) are required.</p>
+        <fieldset>
+          <legend>Year of Study:</legend>
+          <input type="radio" id="y1" name="year" value="1" required> <label for="y1">1st Year</label>
+          <input type="radio" id="y2" name="year" value="2"> <label for="y2">2nd Year</label>
+        </fieldset>
 
-        <form action="#" method="post" aria-describedby="form-instructions">
-          <!-- Text Fields -->
-          <div class="form-group">
-            <label for="full-name">Full Name *</label>
-            <input type="text" id="full-name" name="fullName" placeholder="e.g., Mohammad Yahya" required
-              autocomplete="name">
-          </div>
+        <fieldset>
+          <legend>Interests:</legend>
+          <input type="checkbox" id="c1" name="interest" value="coding"> <label for="c1">Coding</label>
+          <input type="checkbox" id="c2" name="interest" value="iot"> <label for="c2">Hardware &amp; IoT</label>
+        </fieldset>
 
-          <div class="form-group">
-            <label for="student-id">University ID / Roll Number *</label>
-            <input type="text" id="student-id" name="studentId" placeholder="e.g., 260003XXXX" required>
-          </div>
+        <label for="notes">Additional Notes:</label>
+        <textarea id="notes" name="notes" rows="3"></textarea>
 
-          <div class="form-group">
-            <label for="email">University Email Address *</label>
-            <input type="email" id="email" name="email" placeholder="student@university.edu.in" required
-              autocomplete="email">
-          </div>
+        <button type="submit">Submit Registration</button>
+      </form>
+    </section>
 
-          <!-- Dropdown -->
-          <div class="form-group">
-            <label for="event-select">Select Event to Register *</label>
-            <select id="event-select" name="event" required>
-              <option value="">-- Choose an Event --</option>
-              <option value="hackathon">National Hackathon &amp; Coding Sprint 2026</option>
-              <option value="iot-expo">Embedded Systems &amp; IoT Hardware Expo</option>
-              <option value="football">Inter-Department Football Championship</option>
-            </select>
-          </div>
-
-          <!-- Radio Buttons -->
-          <fieldset class="form-group">
-            <legend>Year of Study *</legend>
-            <div class="option-item">
-              <input type="radio" id="year-1" name="studyYear" value="1" required>
-              <label for="year-1">1st Year</label>
-            </div>
-            <div class="option-item">
-              <input type="radio" id="year-2" name="studyYear" value="2">
-              <label for="year-2">2nd Year</label>
-            </div>
-            <div class="option-item">
-              <input type="radio" id="year-3" name="studyYear" value="3">
-              <label for="year-3">3rd Year</label>
-            </div>
-            <div class="option-item">
-              <input type="radio" id="year-4" name="studyYear" value="4">
-              <label for="year-4">4th Year</label>
-            </div>
-          </fieldset>
-
-          <!-- Checkboxes -->
-          <fieldset class="form-group">
-            <legend>Areas of Interest (Select all that apply)</legend>
-            <div class="option-item">
-              <input type="checkbox" id="interest-coding" name="interests" value="coding">
-              <label for="interest-coding">Competitive Programming &amp; Software</label>
-            </div>
-            <div class="option-item">
-              <input type="checkbox" id="interest-hardware" name="interests" value="hardware">
-              <label for="interest-hardware">IoT, Embedded Systems &amp; Architecture</label>
-            </div>
-            <div class="option-item">
-              <input type="checkbox" id="interest-sports" name="interests" value="sports">
-              <label for="interest-sports">University Sports &amp; Athletics</label>
-            </div>
-          </fieldset>
-
-          <!-- Textarea -->
-          <div class="form-group">
-            <label for="remarks">Prior Experience or Accessibility Accommodations</label>
-            <textarea id="remarks" name="remarks" rows="4"
-              placeholder="Mention team members, hardware requirements, or any special assistance needed..."></textarea>
-          </div>
-
-          <!-- Agreement Checkbox -->
-          <div class="form-group option-item">
-            <input type="checkbox" id="terms" name="terms" required>
-            <label for="terms">I confirm that the above student details are accurate. *</label>
-          </div>
-
-          <button type="submit" class="btn-submit">Submit Registration</button>
-        </form>
-      </section>
-    </div>
-
-    <!-- Sidebar Content -->
-    <aside aria-label="Announcements and Guidelines">
-      <h2>Notice Board</h2>
-      <div class="aside-box">
-        <h3>Registration Deadlines</h3>
-        <p>Registrations close 48 hours prior to each scheduled event. Carry your physical university ID card to the
-          venue.</p>
-      </div>
-      <div class="aside-box">
-        <h3>Attendance Policy</h3>
-        <p>Approved participants will receive official event attendance credit upon check-in at the venue.</p>
-      </div>
+    <aside>
+      <h2>Announcements</h2>
+      <p>Registration closes 2 days before each event. Bring your university ID card.</p>
     </aside>
   </main>
 
   <footer id="contact">
-    <div class="container">
-      <p>&copy; 2026 University Student Activity Council. All rights reserved.</p>
-      <p>Student Activity Center, Campus Block A | Email: <a
-          href="mailto:activities@university.edu.in">activities@university.edu.in</a></p>
-    </div>
+    <p>&copy; 2026 KL University Student Activity Management Portal | activities@kluniversity.in</p>
   </footer>
 </body>
 
